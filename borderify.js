@@ -1,8 +1,8 @@
 const list1 = document.getElementsByClassName("rc"); //Get All Google Search Results
-
+var badsites=["www.google.co.uk/"]
 
 for(i=0; i<list1.length; i++){ //iterate.
-if(list1[i].getElementsByClassName("s")[0].getElementsByClassName("f hJND5c TbwUpd")[0].getElementsByClassName("iUh30")[0].innerHTML == "www.google.co.uk/"){
+if(badsites.includes(list1[i].getElementsByClassName("s")[0].getElementsByClassName("f hJND5c TbwUpd")[0].getElementsByClassName("iUh30")[0].innerHTML)){
 list1[i].getElementsByClassName("r")[0].getElementsByTagName("a")[0].style.background = "red"; // Change the background to red
 list1[i].getElementsByClassName("r")[0].getElementsByTagName("a")[0].innerHTML += "<img src='https://media.discordapp.net/attachments/483662916449468418/484371509058600980/border-48.png'>" //Add the warning
 }
