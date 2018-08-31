@@ -1,0 +1,18 @@
+{
+
+  "description": "A POC of the Spider Web Project.",
+  "manifest_version": 2,
+  "name": "Spider Web",
+  "version": "0.1",
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["borderify.js"]
+    }
+  ]
+
+}
