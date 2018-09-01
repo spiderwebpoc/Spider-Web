@@ -1,9 +1,11 @@
 const search = document.getElementsByClassName("rc"); //Get All Google Search Results
-var badsites = ["www.theguardian.com", "www.dailymail.co.uk", "www.1v6.top"];
+var bad =false;
+var badsites = ["www.dailymail.co.uk", "www.theguardian.com", "www.1v6.top", "www.newyorker.com", "www.theatlantic.com"];
 for(i=0; i<search.length; i++){ //iterate.
 try { //Deal with googles inconsistent URL formatting
 //alert(new URL(search[i].getElementsByClassName("s")[0].getElementsByClassName("f hJND5c TbwUpd")[0].getElementsByClassName("iUh30")[0].innerHTML).hostname);
 if(badsites.includes(new URL(search[i].getElementsByClassName("s")[0].getElementsByClassName("f hJND5c TbwUpd")[0].getElementsByClassName("iUh30")[0].innerHTML).hostname)){ //find search results on the ban list
+bad=true;
 search[i].getElementsByClassName("r")[0].getElementsByTagName("a")[0].style.background = "red"; // Change the background to red
 search[i].getElementsByClassName("r")[0].getElementsByTagName("a")[0].innerHTML += "<img src='https://media.discordapp.net/attachments/483662916449468418/484371509058600980/border-48.png'>"; //Add the warning
 }
@@ -31,25 +33,30 @@ const MainNews = document.getElementsByClassName("mJVYJe r-iUhuHGnRXZr8");
 const MoreNews = document.getElementsByClassName("CMLaue mIKy0c"); 
 const FinalNews = document.getElementsByTagName("g-section-with-header"); 
 for(i=0; i<NewsTitle.length; i++){
+	if(bad)
 	NewsTitle[i].innerHTML = "";
 }
 for(i=0; i<ExtraNews.length; i++){
+	if(bad)
 	ExtraNews[i].innerHTML = "";
 }
 for(i=0; i<MainNews.length; i++){
+	if(bad)
 	MainNews[i].parentNode.removeChild(MainNews[i]);
-	MainNews[i].innerHTML = "";
 }
 for(i=0; i<MoreNews.length; i++){
+	if(bad)
 	MoreNews[i].innerHTML = "";
 }
 for(i=0; i<FinalNews.length; i++){
+	if(bad)
 	FinalNews[i].parentNode.removeChild(FinalNews[i]);
 }
 //Video Removal
 
 const Video = document.getElementsByClassName("BFJZOc");
 for(i=0; i<Video.length; i++){
+	if(bad)
 	Video[i].innerHTML = "";
 }
 
@@ -58,6 +65,7 @@ for(i=0; i<Video.length; i++){
 const Sidebar = document.getElementsByClassName("g rhsvw kno-kp mnr-c g-blk"); 
 
 for(i=0; i<Sidebar.length; i++){
+	if(bad)
 	Sidebar[i].innerHTML = "";
 }
 
