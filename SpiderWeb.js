@@ -1,6 +1,5 @@
 const search = document.getElementsByClassName("rc"); //Get All Google Search Results
-var badsites = []; //List of bad sites seperated by comma
-
+var badsites = ["www.theguardian.com", "www.dailymail.co.uk", "www.1v6.top"];
 for(i=0; i<search.length; i++){ //iterate.
 try { //Deal with googles inconsistent URL formatting
 //alert(new URL(search[i].getElementsByClassName("s")[0].getElementsByClassName("f hJND5c TbwUpd")[0].getElementsByClassName("iUh30")[0].innerHTML).hostname);
@@ -19,9 +18,9 @@ search[i].getElementsByClassName("r")[0].getElementsByTagName("a")[0].innerHTML 
 const image = document.getElementsByClassName("rg_l"); //Get all google images
 for(i=0; i<image.length; i++){ //iterate.
 //alert(image[i].getElementsByClassName("rg_ilmbg")[0].innerHTML.split("-")[1].trim());
-if(badsites.includes(image[i].getElementsByClassName("rg_ilmbg")[0].innerHTML.split("-")[1].trim())){ //Identify images from urls on the ban list
+//if(badsites.includes(image[i].getElementsByClassName("rg_ilmbg")[0].innerHTML.split("-")[1].trim())){ //Identify images from urls on the ban list
 image[i].getElementsByClassName("rg_ic rg_i")[0].src="https://media.discordapp.net/attachments/483662916449468418/484359949703577632/6006.png?width=994&height=560" //Swap image with generic blur
-}
+//}
 }
 
 //News Removal
@@ -53,3 +52,15 @@ const Video = document.getElementsByClassName("BFJZOc");
 for(i=0; i<Video.length; i++){
 	Video[i].innerHTML = "";
 }
+
+//Sdie thing removal
+
+const Sidebar = document.getElementsByClassName("g rhsvw kno-kp mnr-c g-blk"); 
+
+for(i=0; i<Sidebar.length; i++){
+	Sidebar[i].innerHTML = "";
+}
+
+
+
+
