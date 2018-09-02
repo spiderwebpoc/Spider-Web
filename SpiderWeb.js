@@ -1,12 +1,9 @@
 const search = document.getElementsByClassName("rc"); //Get All Google Search Results
-var bad=true;
+var bad=false;
 var badsites = ["the guardian", "the daily mail"];
-var searchbar = document.getElementsByClassName("gsfi");
-for(i=0; i<searchbar.length; i++){
-if(searchbar[i].tagname == "INPUT")
-if(!badsites.includes(searchbar[i].value)){ //find search results on the ban list
-bad=false;
-}}
+if(badsites.includes(document.getElementById("lst-ib").value)){ //find search results on the ban list
+bad=true;
+}
 for(i=0; i<search.length; i++){ //iterate.
 try { //Deal with googles inconsistent URL formatting
 //alert(new URL(search[i].getElementsByClassName("s")[0].getElementsByClassName("f hJND5c TbwUpd")[0].getElementsByClassName("iUh30")[0].innerHTML).hostname);
